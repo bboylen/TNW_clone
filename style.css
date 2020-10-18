@@ -40,6 +40,7 @@ li a {
 #section-header {
     height: 48px;
     display: flex;
+    position: sticky;
     justify-content: space-between;
     font-size: 14px;
     font-weight: 500;
@@ -67,9 +68,18 @@ li a {
       "one one three";
   }
 
-  .one { grid-area: one; }
-  .two { grid-area: two; }
-  .three { grid-area: three; }
+  .one { 
+      grid-area: one; 
+      background-color: black;
+}
+  .two { 
+      grid-area: two; 
+      background-color: black;
+    }
+  .three { 
+      grid-area: three; 
+      background-color: black;
+    }
 
   /* latest-news */
 
@@ -86,7 +96,6 @@ li a {
 }
 
 #latest-news .grid-container {
-    /* height: 522px; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -94,7 +103,7 @@ li a {
     grid-template-areas:
       "one two three four"
       "five six seven eight";
-  }
+}
 
 #latest-news .grid-container div {
     height: 247px;
@@ -246,6 +255,7 @@ li a {
 #latest-deals {
     margin-top: 50px;
     padding: 30px;
+    padding-bottom: 60px;
 }
 
 #latest-deals h2 {
@@ -301,3 +311,189 @@ li a {
       grid-area: eight; 
       background-color: black;
     }
+
+/* page-footer */
+
+#page-footer {
+    /* margin-top: 50px; */
+    background-color: #131313;
+    text-align: center;
+}
+
+#footer-media {
+    padding-top: 40px;
+    margin-bottom: 15px;
+}
+
+#footer-media button{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5%;
+    background-color: #424242;
+    padding: 0.5rem;
+    border-radius: 30rem;
+    border: none;
+}
+
+#footer-misc {
+
+}
+
+#footer-misc ul{
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer-misc li{
+    display: inline-block;
+    font-family: Shentox,sans-serif;
+    float: none;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 1025px) {
+
+    #latest-news .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+          "one two three"
+          "four five six"
+          "seven eight .";
+    }
+
+    #funding-news .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+            "one two three";
+    }
+
+    #funding-header, #funding-header h2, #funding-header nav {
+        display: block;
+    }
+
+    #funding-header h2 {
+        margin-bottom: 12px;
+    }
+    
+    #funding-news .four {
+        display: none;
+    }
+
+    #topic-sections {
+        margin-top: 50px;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+            "one two"
+            "three .";
+    }
+
+    #latest-deals .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+          "one two three"
+          "four five six"
+          "seven eight .";
+    }
+}
+
+@media only screen and (max-width: 765px) {
+
+    #page-header li, #section-header li {
+        display: none;
+    }
+
+    #main-articles {
+        height: 830px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 5px 5px;
+        grid-template-areas:
+          "one"
+          "two"
+          "three";
+    }
+
+    #latest-news .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 15px 20px;
+        grid-template-areas:
+          "one" 
+          "two" 
+          "three"
+          "four" 
+          "five" 
+          "six"
+          "seven" 
+          "eight";
+    }
+
+    #latest-news .grid-container div {
+        height: 75px;
+      }
+
+    #funding-news .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr  1fr 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+            "one" 
+            "two" 
+            "three";
+    }
+
+    #topic-sections {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 25px 25px;
+        grid-template-areas:
+            "one"
+            "two"
+            "three";
+    }
+
+    #topic-sections div {
+        height: 800px;
+    }
+
+    #latest-deals .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 15px 20px;
+        grid-template-areas:
+          "one" 
+          "two" 
+          "three"
+          "four" 
+          "five" 
+          "six"
+          "seven" 
+          "eight";
+    }
+
+    #latest-deals .grid-container div {
+        height: 75px;
+      }
+}
